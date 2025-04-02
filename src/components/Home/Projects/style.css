@@ -1,0 +1,160 @@
+.project-main-cont {
+  padding-top: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Gradient Heading */
+.main-heading2 {
+  font-weight: bold;
+  font-size: 42px;
+  text-align: center;
+  color: #222; /* Dark grey for a classic look */
+  font-family: "Georgia", serif; /* Classic font */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.main-heading2::after {
+  content: "";
+  display: block;
+  width: 320px;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(174, 0, 255), rgb(0, 0, 0));
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Project List Container */
+.project-list-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  min-height: 830px;
+  overflow: hidden;
+}
+
+/* Show All Items - Merged with .project-list-cont */
+.showAllItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  min-height: 830px;
+  overflow: hidden;
+}
+
+/* Category Buttons */
+.category-buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.category-buttons button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.category-buttons button.active {
+  background-color: #007BFF;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Show More / Show Less Button Container */
+.showmore-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Show More & Show Less Buttons */
+.showmore-btn {
+  margin: 5px;
+  width: 150px;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.showmore-btn:hover {
+  background-color: #5a52c4;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.showmore-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-heading2 {
+      font-size: 36px;
+  }
+
+  .project-list-cont, .showAllItems {
+      padding: 20px;
+  }
+
+  .showmore-btn {
+      width: 120px;
+      font-size: 14px;
+  }
+
+  .category-buttons {
+      gap: 10px;
+  }
+
+  .category-buttons button {
+      width: 150px;
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .category-buttons button {
+      width: 130px;
+      font-size: 14px;
+  }
+
+  .showmore-btn {
+      width: 100px;
+      font-size: 12px;
+  }
+}
