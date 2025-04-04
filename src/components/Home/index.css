@@ -2,25 +2,25 @@ a {
     text-decoration: none;
   }
   
-  h {
-      font-family: Robto;
-      font-weight: bold;
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
   }
   
   .heading1 {
-      color: #000000;
-      font-size: 40px;
-      margin: 0px;
-      margin-bottom: 20px;
-      font-weight: bold;
+    color: #000000;
+    font-size: 40px;
+    margin: 0px;
+    margin-bottom: 20px;
+    font-weight: bold;
   }
   
   .heading2 {
-      color: hwb(0 0% 100%);
-      font-size: 40px;
-      margin: 0px;
-      margin-bottom: 20px;
-      font-weight: bold;
+    color: #000000;
+    font-size: 40px;
+    margin: 0px;
+    margin-bottom: 20px;
+    font-weight: bold;
   }
   
   .home-name {
@@ -87,14 +87,18 @@ a {
   /* From Uiverse.io by wilsondesouza */  
   
   .animated-text {
-    color: #000000;
     font-size: 34px;
     font-weight: 600;
     min-width: 450px;
-    @media (max-width: 768px) {
+    color: #000000;
+  }
+  
+  @media (max-width: 768px) {
+    .animated-text {
       font-size: 25px;
     }
   }
+  
   
   .animated-text span {
     position: relative;

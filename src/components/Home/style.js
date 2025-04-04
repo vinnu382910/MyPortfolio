@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 // Keyframes for the moving background
 
@@ -24,65 +24,61 @@ export const About = styled.div`
     font-size: 25px;
   }
 `
+const myAnim = keyframes`
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: translateY(-250px);
+  }
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  55% {
+    animation-timing-function: ease-in;
+    transform: translateY(-65px);
+  }
+  72% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+  81% {
+    animation-timing-function: ease-in;
+    transform: translateY(-28px);
+  }
+  90% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+  95% {
+    animation-timing-function: ease-in;
+    transform: translateY(-8px);
+  }
+  100% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+`;
+
 export const MyPhoto = styled.img`
   height: 480px;
   width: 450px;
   border-radius: 50%;
-  animation: myAnim 5s ease 0s 1 normal both;
+  animation: ${myAnim} 5s ease 0s 1 normal both;
   border: none;
-  @keyframes myAnim {
-    0% {
-      animation-timing-function: ease-in;
-      opacity: 0;
-      transform: translateY(-250px);
-    }
-  
-    38% {
-      animation-timing-function: ease-out;
-      opacity: 1;
-      transform: translateY(0);
-    }
-  
-    55% {
-      animation-timing-function: ease-in;
-      transform: translateY(-65px);
-    }
-  
-    72% {
-      animation-timing-function: ease-out;
-      transform: translateY(0);
-    }
-  
-    81% {
-      animation-timing-function: ease-in;
-      transform: translateY(-28px);
-    }
-  
-    90% {
-      animation-timing-function: ease-out;
-      transform: translateY(0);
-    }
-  
-    95% {
-      animation-timing-function: ease-in;
-      transform: translateY(-8px);
-    }
-  
-    100% {
-      animation-timing-function: ease-out;
-      transform: translateY(0);
-    }
-  }
+
   @media (max-width: 768px) {
     height: 400px;
     width: 380px;
     padding: 30px;
     border: none;
   }
-`
+`;
+
 export const AboutCont = styled.div`
   display: flex;
-  flex-directio: row;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;

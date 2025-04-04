@@ -4,30 +4,29 @@ import './style.css';
 
 const About2 = () => {
   const imageRef = useRef(null);
+  const observerRef = useRef(null);
 
   useEffect(() => {
     if (!('IntersectionObserver' in window)) return;
 
-    const observer = new IntersectionObserver(
+    observerRef.current = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-on-view');
-
-          // Disconnect the observer after the first intersection
-          if (observer) {
-            observer.disconnect();
-          }
+          observerRef.current.unobserve(entry.target); // Unobserve instead of disconnecting
         }
       },
       { threshold: 0.1 }
     );
 
     const img = imageRef.current;
-    if (img) observer.observe(img);
+    if (img) observerRef.current.observe(img);
 
     // Cleanup observer on component unmount
     return () => {
-      if (img) observer.unobserve(img);
+      if (observerRef.current && img) {
+        observerRef.current.unobserve(img);
+      }
     };
   }, []);
 
@@ -47,7 +46,8 @@ const About2 = () => {
           <h1 className="name">Kalva Vinay</h1>
           <p className="role">Full Stack Developer</p>
           <p className="about-content">
-            👋 Hey there! I'm Vinay, a passionate full-stack developer with a knack for building robust and user-friendly web applications. I'm currently in my final year pursuing a B.Tech in Computer Science with a specialization in Cyber Security at Ganapathy Engineering College. I thrive on turning ideas 👨‍💻.<br />In 2022, I embarked on a transformative journey with Nxt Wave 🚀, where I honed my skills in Frontend development 🎨. Since then, I've been dedicated to expanding my expertise 📚 and diving into Backend technologies 🔧.
+            👋 Hey there! I'm Vinay, a passionate full-stack developer with a knack for building robust and user-friendly web applications. I'm currently in my final year pursuing a B.Tech in Computer Science with a specialization in Cyber Security at Ganapathy Engineering College. I thrive on turning ideas 👨‍💻.<br />
+            In 2022, I embarked on a transformative journey with Nxt Wave 🚀, where I honed my skills in Frontend development 🎨. Since then, I've been dedicated to expanding my expertise 📚 and diving into Backend technologies 🔧.
           </p>
           <div className='mail-cont'>
             <p className="about-mail">

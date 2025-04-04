@@ -1,23 +1,47 @@
-/* Write your code here. */
-
 li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 img {
-    height: 70px;
-    width: 90px;
-    border: 3px solid rgb(0, 255, 247);
+  height: 70px;
+  width: 90px;
+  border: 3px solid rgb(0, 255, 247); /* Default border for active thumbnails */
+  transition: opacity 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
 .thumbnail-img {
-    border: none;
-    opacity: 0.5;
+  border: none !important; /* Removes border for inactive thumbnails */
+  opacity: 0.5;
+}
+
+.img-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) { 
+  img {
+    height: 60px;
+    width: 80px;
   }
-  
-  .img-btn {
-    background-color: transparent;
-    border-color: transparent;
-    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  img {
+    height: 50px;
+    width: 70px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  img {
+    height: 40px;
+    width: 60px;
+  }
+  li {
+    margin-bottom: 5px; /* Reduce spacing for smaller screens */
+  }
+}

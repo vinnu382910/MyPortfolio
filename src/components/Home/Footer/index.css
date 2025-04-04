@@ -7,14 +7,15 @@
     font-weight: 500;
 }
 
-p {
+.footer-cont p {
     margin-bottom: 0px;
 }
+
 
 .footer-para {
     color: #ffffff;
 }
 
 .copyright {
-    font-weight: bold;
+    font-weight: 700; /* or keep 500 for medium boldness */
 }
