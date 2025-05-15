@@ -228,7 +228,7 @@ const Home = () => {
                 </li>
                 <li className="icon-content">
                     <a
-                    href="https://www.instagram.com/mr_dio__07/"
+                    href="https://www.instagram.com/vinay_mern/"
                     aria-label="Instagram"
                     data-social="instagram"
                     >
